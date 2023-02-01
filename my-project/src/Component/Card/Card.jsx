@@ -3,7 +3,7 @@ import React from "react";
 const Card = (props) => {
   // console.log(props.product)
   const { name, img, price, star, seller, wholePrice, stock,  } = props.product;
- 
+//const {handleAddtoCart}=props.product
   return (
     <>
       <div>
@@ -28,7 +28,7 @@ const Card = (props) => {
               <div className="flex gap-3">
                 <button
                   type="button"
-                  class=" inline-block w-48 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                  class=" inline-block w-48 truncate py-2.5 p-1 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
                 >
                   {seller}
                 </button>
@@ -45,6 +45,12 @@ const Card = (props) => {
                   {stock}
                 </button>
               </div>
+              <button onClick={()=>props.handleAddtoCart(props.product)}
+                  type="button" 
+                  class=" inline-block px-9 py-2.5 mt-2 w-full bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                >
+                  add to cart
+                </button>
             </div>
           </div>
         </div>

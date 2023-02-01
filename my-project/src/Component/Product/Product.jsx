@@ -11,7 +11,10 @@ const Product = () => {
       .then((res) => res.json())
       .then((data) => setproducts(data));
   }, []);
-
+  const handleAddtoCart=(product)=>{
+    //console.log('clicked')
+    console.log(product)
+   }
   return (
     <>
       <h1 className=" border-b w-2/4 mx-auto text-center text-slate-800 mt-5 mb-5">
@@ -20,7 +23,7 @@ const Product = () => {
       <div className="lg:flex gap-5">
         <div><div className="grid lg:grid-cols-3 gap-2 ">
         {products.map((product) => (
-          <Card key={product.id} product={product}></Card>
+          <Card key={product.id} handleAddtoCart={handleAddtoCart} product={product}></Card>
         ))}
         <h1>total product is:{products.length}</h1>
       </div></div>
@@ -40,7 +43,7 @@ const Product = () => {
                   type="button"
                   class=" inline-block w-full py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
                 >
-                 add to cart
+                 add to 
                 </button>
                 
               </div>
