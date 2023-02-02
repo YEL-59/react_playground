@@ -1,18 +1,20 @@
+import "./App.css";
 
-import './App.css';
-import Navbar from './Component/Navbar/Navbar';
-
-import Product from './Component/Product/Product';
+import Navbar from "./Component/Navbar/Navbar";
+import Price from "./Component/Priceing/Price";
+import Chart from "./Component/Chart/chart";
+import Product from "./Component/Product/Product";
 
 //import TryVideo from './Component/TryVideo';
 function App() {
   return (
-    <> 
- <Navbar></Navbar>
-    <Product></Product>
+    <>
+      <Navbar></Navbar>
+      <Product></Product>
+      <Price></Price>
+      <Chart></Chart>
 
-    {/* <TryVideo/> */}
- 
+      {/* <TryVideo/> */}
     </>
   );
 }
