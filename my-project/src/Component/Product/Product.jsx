@@ -42,7 +42,7 @@ const Product = () => {
       </h1>
       <div className="lg:flex gap-5">
         <div>
-          <div className="grid lg:grid-cols-3 gap-2 ">
+          <div className="grid lg:grid-cols-3 gap-2  w-4/4">
             {products.map((product) => (
               <Card
                 key={product.id}
@@ -55,7 +55,7 @@ const Product = () => {
         </div>
         <div>
           {" "}
-          <div className="rounded-lg shadow-lg bg-white max-w-sm border ">
+          <div className="rounded-lg shadow-lg bg-white border   w-4/4 ">
             <div className="p-6">
               <h5 className="text-[#ff9800] text-2xl truncate border-b   font-medium mb-2 ">
                 cart

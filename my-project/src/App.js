@@ -19,8 +19,10 @@ function App() {
     },
     {
       path: 'about' ,element:<div>Home2 PAge</div>
+    },
+    {
+      path:'*',element:<div>404</div>
     }
-    
   ])
   return (
     <>
