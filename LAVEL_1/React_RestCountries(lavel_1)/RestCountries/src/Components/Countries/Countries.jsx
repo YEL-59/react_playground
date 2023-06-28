@@ -13,7 +13,7 @@ const Countries = () => {
     },[])
   return (<>
     <div>Countries</div>
-   <div className='grid grid-cols-3 gap-2'>
+   <div className='grid grid-cols-3 gap-2 text-sm'>
    {
         countries.map((country)=> <Country  country={country}></Country>)
     }

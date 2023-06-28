@@ -3,18 +3,22 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Countries from './Components/Countries/Countries'
+import Header from './Components/Header/Header'
+import Footer from './Components/Footer/Footer'
+import Pizzas from './Components/Menu/PiZZAS/Pizzas'
 
 function App() {
-  const [count, setCount] = useState(0)
+ 
 
   return (
     <div>
       
-      <h1 className='border-b w-2/3 mx-auto'>Vite + React</h1>
-      <Countries></Countries>
+      <Header></Header>
      
+<Pizzas></Pizzas>
      
-      
+     <Footer></Footer>
+            {/* <Countries></Countries> */}
     </div>
   )
 }
