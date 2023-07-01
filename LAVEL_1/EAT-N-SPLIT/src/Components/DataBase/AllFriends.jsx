@@ -1,7 +1,7 @@
 //store all pizza data in a variable
 
 
-export const initialFriends = [
+export const friends = [
   {
     id: 118836,
     name: "Clark",
