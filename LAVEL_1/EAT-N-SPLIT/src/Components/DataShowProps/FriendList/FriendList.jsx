@@ -2,12 +2,12 @@ import React from "react";
 import { friends } from "../../DataBase/AllFriends";
 import Friend from "../Friend/Friend";
 
-const FriendList = ({friends}) => {
+const FriendList = ({friends ,onSelection,selectedfriend}) => {
   return (
     <>
       <ul>
-        {friends.map((friend,id) => (
-          <Friend friend={friend} key={id} ></Friend>
+        {friends.map((friend) => (
+          <Friend friend={friend} key={friends.id} onSelection={onSelection}  selectedfriend={selectedfriend}></Friend>
         ))}
       </ul>
     </>

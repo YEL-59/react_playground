@@ -9,6 +9,7 @@ import { friends } from "../DataBase/AllFriends";
 const MainApp = () => {
     const [ShowAddFriends, setShowAddFriends] = useState(true)
    const [friend, setFriend] = useState(friends)
+   const [selectedFriend, setSelectedFriend] = useState(null)
 
 
     const handelShowAddFriends = () => {
@@ -20,19 +21,25 @@ const MainApp = () => {
 
     }
     
+    const handelSelectFriend = (id) => {
+        const friend = friends.find((friend) => friend.id === id)
+        setSelectedFriend(friend)
+      // setSelectedFriend((cur)=>cur===friend ? null:friend)
+  
+    }
 
 
   return (
    <>
    <div className='app'>
     <div className='sidebar'>
-    <FriendList friends={friend}  ></FriendList>
+    <FriendList friends={friend} onSelection={handelSelectFriend} selectedfriend= {selectedFriend } ></FriendList>
    
     {ShowAddFriends && <FormAddFriend onAddFriend={handelAddFriends}></FormAddFriend>}
     <Button onClick={handelShowAddFriends}>{ShowAddFriends ? "Close":" Add Friend"}</Button>
     
     </div>
-    <FromSplitBill></FromSplitBill>
+{ selectedFriend && <FromSplitBill selectedFriend={selectedFriend}></FromSplitBill>}
 
    </div>
    </>
