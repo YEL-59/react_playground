@@ -9,10 +9,10 @@ root.render(
      
     />
     {/* <StarRating size={24} color="red" className="test" defaultRating={2} /> */}
+    {/* <StarRating maxRating={10} size={24} /> */}
 
 
-
-
+    
    
   </React.StrictMode>
 );
