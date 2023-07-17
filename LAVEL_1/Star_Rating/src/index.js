@@ -12,6 +12,11 @@ root.render(
     {/* <StarRating maxRating={10} size={24} /> */}
 
 
+
+
+
+
+
     
    
   </React.StrictMode>
