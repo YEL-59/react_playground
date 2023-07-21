@@ -60,6 +60,8 @@ function App() {
         {state.status ==="ready" && <StartScreen numQuestions={numQuestions} dispatch={dispatch}></StartScreen>}
         {state.status ==="start" && <Questions question={state?.questions[state?.index]}></Questions> }
         </Main>
+
+        
       </div>
     </>
   );
