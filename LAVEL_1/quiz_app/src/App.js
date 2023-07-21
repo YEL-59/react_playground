@@ -61,7 +61,7 @@ function App() {
         {state.status ==="start" && <Questions question={state?.questions[state?.index]}></Questions> }
         </Main>
 
-        
+
       </div>
     </>
   );
