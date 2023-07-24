@@ -10,10 +10,10 @@ import Questions from "./Components/Questions";
 
 const initialState = {
   questions: [],
-
   status: "loading",
   index: 0,
-  answer:"null"
+  answer: null,
+  
 };
 
 function reducer(state=initialState, action) {
@@ -34,6 +34,11 @@ function reducer(state=initialState, action) {
           ...state,
           status: "start",
         };
+    case "newAnswer":
+      return{
+        ...state,
+        answer:action.payload,
+      }
     default:
       throw new Error("no matching action type");
   }
@@ -58,7 +63,7 @@ function App() {
         {state.status ==="loading" && <Loader></Loader>}
         {state.status ==="error" && <Error></Error>}
         {state.status ==="ready" && <StartScreen numQuestions={numQuestions} dispatch={dispatch}></StartScreen>}
-        {state.status ==="start" && <Questions question={state?.questions[state?.index]}></Questions> }
+        {state.status ==="start" && <Questions question={state?.questions[state?.index]} dispatch={dispatch} answer={state?.answer}></Questions> }
         </Main>
 
 
