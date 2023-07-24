@@ -7,12 +7,14 @@ import Loader from "./Components/Loader";
 import Error from "./Components/Error";
 import StartScreen from "./Components/StartScreen";
 import Questions from "./Components/Questions";
+import NextButton from "./Components/NextButton";
 
 const initialState = {
   questions: [],
   status: "loading",
   index: 0,
   answer: null,
+  points:0,
   
 };
 
@@ -35,10 +37,21 @@ function reducer(state=initialState, action) {
           status: "start",
         };
     case "newAnswer":
+      const question = state.questions[state.index];
       return{
         ...state,
         answer:action.payload,
+        points:action.payload===question.correctOption
+        ?state.points+ question.points
+        :state.points
       }
+      case "nextQuestion":
+        return{
+          ...state,
+          index:state.index+1,
+          answer:null
+         
+        }
     default:
       throw new Error("no matching action type");
   }
@@ -60,11 +73,25 @@ function App() {
       <div className="App">
         <Header />
         <Main>
-        {state.status ==="loading" && <Loader></Loader>}
+            {state.status ==="loading" && <Loader></Loader>}
         {state.status ==="error" && <Error></Error>}
         {state.status ==="ready" && <StartScreen numQuestions={numQuestions} dispatch={dispatch}></StartScreen>}
-        {state.status ==="start" && <Questions question={state?.questions[state?.index]} dispatch={dispatch} answer={state?.answer}></Questions> }
+        {state.status ==="start" &&<>
+        
+        
+        <Questions question={state?.questions[state?.index]} dispatch={dispatch} answer={state?.answer}></Questions>
+
+      <NextButton dispatch={dispatch}  answer={state?.answer}></NextButton>
+        
+        
+        
+        </> 
+
+
+         }
+    
         </Main>
+
 
 
       </div>
