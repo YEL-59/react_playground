@@ -1,0 +1,16 @@
+{
+  "cities": [
+    {
+      "cityName": "Dhaka",
+      "country": "Bangladesh",
+      "emoji": "🇧🇩",
+      "date": "2023-07-25T09:12:32.607Z",
+      "notes": "owao",
+      "position": {
+        "lat": "23.711136295418697",
+        "lng": "90.42367160747946"
+      },
+      "id": 98443199
+    }
+  ]
+}
