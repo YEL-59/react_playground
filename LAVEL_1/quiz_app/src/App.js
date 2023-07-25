@@ -9,6 +9,7 @@ import StartScreen from "./Components/StartScreen";
 import Questions from "./Components/Questions";
 import NextButton from "./Components/NextButton";
 import Progress from "./Components/Progress";
+import Finished from "./Components/Finished";
 
 const initialState = {
   questions: [],
@@ -16,6 +17,7 @@ const initialState = {
   index: 0,
   answer: null,
   points: 0,
+  highscore: 0,
 };
 
 function reducer(state = initialState, action) {
@@ -52,6 +54,13 @@ function reducer(state = initialState, action) {
         index: state.index + 1,
         answer: null,
       };
+      case "finish":
+        return {
+          ...state,
+          status: "finished",
+          highscore: state.points > state.highscore ? state.points : state.highscore,
+        };
+
     default:
       throw new Error("no matching action type");
   }
@@ -102,6 +111,10 @@ function App() {
               ></NextButton>
             </>
           )}
+
+  {state.status === "finished" && (
+    <Finished points={state.points} maxPossiblePoints={state.maxPossiblePoints} highscore={state?.highscore}></Finished>
+  )}
         </Main>
       </div>
     </>
