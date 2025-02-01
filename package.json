@@ -1,7 +1,11 @@
 {
   "dependencies": {
-    "node-modules": "^1.0.1",
-    "react-player": "^2.11.0",
-    "react-redux": "^8.1.1"
+    "@tailwindcss/vite": "^4.0.2",
+    "lucide-react": "^0.474.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router": "^7.1.4",
+    "react-router-dom": "^6.29.0",
+    "tailwindcss": "^4.0.2"
   }
 }
